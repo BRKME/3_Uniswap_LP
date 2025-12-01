@@ -300,8 +300,10 @@ def get_token_price(platform, token_addr):
     except:
         return 0
 
-BOT_TOKEN = '8442392037:AAEiM_b4QfdFLqbmmc1PXNvA99yxmFVLEp8'
-CHAT_ID = '350766421'
+import os
+
+BOT_TOKEN = os.getenv('CRYPTO_BOT_TOKEN')
+CHAT_ID = os.getenv('CRYPTO_CHAT_ID')
 
 def send_to_telegram(message):
     url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage'
